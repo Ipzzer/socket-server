@@ -23,5 +23,18 @@ export const messageWithFromEvent = (cliente: Socket, io: SocketIO.Server) => {
         console.log(payload);
         io.emit('new-message', payload);
     });
+};
+
+// Escuchar 
+export const listenConfigureUser = (cliente: Socket, io: SocketIO.Server) => {
+
+    cliente.on('configurar-usuario', (payload: any, callback?: Function) => {
+        console.log('configurar usuario',  payload);
+        callback({
+            ok: true,
+            mensaje: `Usuario ${ payload.nombre }, configurado!!`
+        });
+    });
 
 };
+

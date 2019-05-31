@@ -38,6 +38,7 @@ export default class Server {
 
             // socket.message(cliente);
             socket.messageWithFromEvent(cliente, this.io);
+            socket.listenConfigureUser(cliente, this.io);
 
             socket.desconectar(cliente);
         });
