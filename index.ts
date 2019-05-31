@@ -1,9 +1,10 @@
 import Server from './classes/server';
 import router from './routes/router';
 import bodyParser = require('body-parser');
-import cors from 'cors';
+import cors = require('cors');
+// import cors from 'cors';
 
-const server: any = new Server();
+const server: any = Server.instance;
 
 // Body Parser - Debe ir antes del router
 server.app.use( bodyParser .urlencoded({  extended: true}) ); 
